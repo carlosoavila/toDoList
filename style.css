@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  border: 1px solid black;
+  width: 400px;
+  height: 400px;
+  margin: 5% auto 
+}
