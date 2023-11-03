@@ -111,12 +111,52 @@ h4, p {
   gap: 10px;
 }
   
+#filter {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
 
+#filter select {
+  flex: 1;
+}
 
 
 /*Toolbar*/
 
+/*To do list*/
 
+.todo-list {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  transition: .3s;
+  gap: 5px;
+}
+
+.todo h3 {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.done {
+  background-color: #395169;
+}
+
+.done h3 {
+  color: #fff;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+/*To do list*/
 
 h1 {
   text-align: center;
