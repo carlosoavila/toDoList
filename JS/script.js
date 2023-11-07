@@ -68,7 +68,15 @@ const upDateTodo = (text) => {
 const searchTodo = (text) => {
 
   if(text) {
+    const todos = document.querySelectorAll(".todo")
 
+    todos.forEach((todo) => {
+      let todoTitle = todo.querySelector("h3")
+      if(todoTitle.innerText.includes(text)) {
+        todo.classList.toggle("hide")
+        console.log(todo)
+      }
+    })
   }
 }
 
@@ -132,4 +140,5 @@ editForm.addEventListener("submit", (e) => {
 searchInput.addEventListener("keyup", (e) => {
   e.preventDefault()
   console.log(searchInput.value)
+  searchTodo(searchInput.value)
 })
