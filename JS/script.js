@@ -72,12 +72,18 @@ const searchTodo = (text) => {
 
     todos.forEach((todo) => {
       let todoTitle = todo.querySelector("h3")
-      if(todoTitle.innerText.includes(text)) {
-        todo.classList.toggle("hide")
+      if(!todoTitle.innerText.includes(text)) {
+        todo.style.display = "none"
         console.log(todo)
-      }
+      } 
     })
-  }
+
+  } else if (text === "") {
+    const todos = document.querySelectorAll(".todo")
+    todos.forEach((todo) => {    
+      todo.style.display = "flex"
+    })
+  } 
 }
 
 // Events
