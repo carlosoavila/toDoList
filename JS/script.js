@@ -7,6 +7,8 @@ const eraseBtn = document.querySelector("#erase-button")
 const editForm = document.querySelector("#edit-form")
 const editInput = document.querySelector("#edit-input")
 const cancelEditBtn = document.querySelector("#cancel-edit-btn")
+const filter = document.querySelector("#filter-select")
+console.log(filter.value)
 
 let oldInputValue
 
@@ -154,4 +156,15 @@ eraseBtn.addEventListener('click', (e) => {
   e.preventDefault()
   searchInput.value = ""
   searchTodo(searchInput.value)
+})
+
+filter.addEventListener("click", (e) => {
+  e.preventDefault()
+  if(filter.value == "done") {
+    console.log(todoList)
+    if(todoList.classList.contains("done")) {
+      console.log(todoList)
+    }
+  }
+  
 })
