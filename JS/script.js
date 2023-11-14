@@ -162,9 +162,18 @@ filter.addEventListener("click", (e) => {
   e.preventDefault()
   if(filter.value == "done") {
     console.log(todoList)
-    if(todoList.classList.contains("done")) {
-      console.log(todoList)
+    const todos = document.querySelectorAll(".todo")
+    todos.forEach((todo) => {
+      if(!todo.classList.contains("done")) {
+      todo.style.display = "none"
     }
-  }
-  
+    })
+  } if(filter.value == "todo") {
+    const todos = document.querySelectorAll(".done")
+    todos.forEach((todo) => {
+      if(todo.classList.contains("done")) {
+        todo.style.display = "none"
+      }
+    })
+  } 
 })
