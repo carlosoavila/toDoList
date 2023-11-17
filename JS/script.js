@@ -160,20 +160,27 @@ eraseBtn.addEventListener('click', (e) => {
 
 filter.addEventListener("click", (e) => {
   e.preventDefault()
-  if(filter.value == "done") {
+  if(filter.value == "todo") {
     console.log(todoList)
     const todos = document.querySelectorAll(".todo")
     todos.forEach((todo) => {
-      if(!todo.classList.contains("done")) {
-      todo.style.display = "none"
-    }
-    })
-  } if(filter.value == "todo") {
-    const todos = document.querySelectorAll(".done")
-    todos.forEach((todo) => {
+        todo.style.display = "flex"
       if(todo.classList.contains("done")) {
         todo.style.display = "none"
-      }
+    } 
     })
-  } 
+  } else if(filter.value == "done") {
+    const todos = document.querySelectorAll(".todo")
+    todos.forEach((todo) => {
+        todo.style.display = "flex"
+      if(!todo.classList.contains("done")) {
+        todo.style.display = "none"
+      } 
+    })
+  } else if(filter.value == "all") {
+    const todos = document.querySelectorAll(".todo")
+    todos.forEach((todo) => {
+        todo.style.display = "flex"
+    })
+  }
 })
